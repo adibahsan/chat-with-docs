@@ -1,10 +1,10 @@
 import gradio as gr
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.llms import HuggingFaceHub
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import Chroma
+from langchain_community.llms import HuggingFaceHub
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-from langchain.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from transformers import AutoTokenizer
 
 import os
@@ -22,7 +22,7 @@ def load_doc(pdf_doc):
     text = text_splitter.split_documents(documents)
     db = Chroma.from_documents(text, embedding)
     llm = HuggingFaceHub(repo_id="OpenAssistant/oasst-sft-1-pythia-12b",
-                         model_kwargs={"temperature": 0.4, "max_length": 256})
+                         model_kwargs={"temperature": 0.2, "max_length": 4096})
     global chain
     chain = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=db.as_retriever())
     return 'Document has successfully been loaded'
