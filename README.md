@@ -71,7 +71,3 @@ Contributions are welcome! Here's how you can contribute to this project:
 This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ---
-
-Replace `Project Title`, `Brief description of your project`, `your-username`, `project-name`, and `[License Name]` with appropriate values related to your project.
-
-Make sure to replace `[License Name]` with the actual license your project is using, such as MIT, Apache, etc.
