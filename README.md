@@ -66,8 +66,3 @@ Contributions are welcome! Here's how you can contribute to this project:
 5. Push to your fork.
 6. Submit a pull request.
 
-## License
-
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
